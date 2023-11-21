@@ -3,9 +3,9 @@ function calculateArea() {
     const side2 = parseFloat(document.getElementById('side2').value);
     const side3 = parseFloat(document.getElementById('side3').value);
   
-    const s = (side1 + side2 + side3) / 2;
+    const pip = (side1 + side2 + side3) / 2; //півпериметр
   
-    const area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+    const area = Math.sqrt(pip * (pip - side1) * (pip - side2) * (pip - side3));
   
     if (!isNaN(area)) {
       document.getElementById('result').innerText = `Площа трикутника: ${area.toFixed(2)}`;
@@ -53,11 +53,70 @@ function calculateAreaBySidesAndRadius() {
   const side9 = parseFloat(document.getElementById('side9').value);
   const radius = parseFloat(document.getElementById('radius').value);
 
-  const area4 = (side7 * side8 * side9)/(4*radius);
+  const area4 = (side7 * side8 * side9)/(4*radius); 
 
   if (!isNaN(area4)) {
     document.getElementById('result4').innerText = `Площа трикутника: ${area4.toFixed(2)}`;
   } else {
     document.getElementById('result4').innerText = 'Введіть коректні значення сторонін і радіуса!';
+  }
+}
+
+
+
+function calculatePalindromNumber() {
+  const number = parseFloat(document.getElementById('number').value);
+
+  const numString = number.toString(); // Перетворення числа на рядок щоб перевірити, чи воно однаково виглядає в реверсі
+  const reversedString = numString.split('').reverse().join(''); //реверс
+
+  if (numString === reversedString) {
+    document.getElementById('result5').innerText = `Число ${number} є паліндромом`;
+  } else {
+    document.getElementById('result5').innerText = `Число ${number} не є паліндромом`;
+  }
+}
+
+
+
+function calculateFibonacci() {
+  const number2 = parseFloat(document.getElementById('number2').value);
+
+  function isFibonacci(number) {
+    let a = 0;
+    let b = 1;
+    while (a < number) {
+        const temp = a;
+        a = b;
+        b = temp + b;
+    }
+    return a === number;
+}
+
+  if (isFibonacci(number2)) {
+    document.getElementById('result6').innerText = `Число ${number2} належить до Фібаначчі`;
+  } else {
+    document.getElementById('result6').innerText = `Число ${number2} не належить до Фібаначчі`;
+  }
+}
+
+
+
+function calculateAnagram() {
+  const word1 = document.getElementById("word1").value.toLowerCase();
+  const word2 = document.getElementById("word2").value.toLowerCase();
+
+  if (word1.length !== word2.length) {
+    document.getElementById("result7").textContent = "Не анаграма";
+    return;
+  }
+
+  const sortedWord1 = word1.split("").sort().join("");
+  const sortedWord2 = word2.split("").sort().join("");
+
+  if (sortedWord1 === sortedWord2) {
+    document.getElementById("result7").textContent = "Анаграма";
+  } else {
+    document.getElementById("result7").textContent = "Не анаграма";
   }
 }
