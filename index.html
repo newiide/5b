@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="./style.css" />
+<body>
+  <div class="container"> 
+  <h2>Калькулятор площі трикутника за трьома сторонами</h2>
+  <label for="side1">Сторона 1:</label>
+  <input type="number" id="side1">
+  <br>
+  <label for="side2">Сторона 2:</label>
+  <input type="number" id="side2">
+  <br>
+  <label for="side3">Сторона 3:</label>
+  <input type="number" id="side3">
+  <br><br>
+  <button onclick="calculateArea()">Розрахувати площу</button>
+  <p id="result"></p>
+</div>
+
+<div class="container">
+  <h2>Калькулятор площі трикутника за двома сторонами і кутом</h2>
+  <label for="side4">Сторона 1:</label>
+  <input type="number" id="side4">
+  <br>
+  <label for="side5">Сторона 2:</label>
+  <input type="number" id="side5">
+  <br>
+  <label for="angle">Кут між ними:</label>
+  <input type="number" id="angle">
+  <br><br>
+  <button onclick="calculateAreaByAngle()">Розрахувати площу</button>
+  <p id="result2"></p>
+</div>
+
+<div class="container">
+  <h2>Калькулятор площі трикутника за стороною і висотою</h2>
+  <label for="side6">Сторона:</label>
+  <input type="number" id="side6">
+  <br>
+  <label for="height">Висота:</label>
+  <input type="number" id="height">
+  <br><br>
+  <button onclick="calculateAreaBySideAndHeight()">Розрахувати площу</button>
+  <p id="result3"></p>
+</div>
+
+<div class="container">
+  <h2>Калькулятор площі трикутника за трьома сторонами і радіусом описаного кола</h2>
+  <label for="side7">Сторона1:</label>
+  <input type="number" id="side7">
+  <br>
+  <label for="side8">Сторона2:</label>
+  <input type="number" id="side8">
+  <br>
+  <label for="side9">Сторона3:</label>
+  <input type="number" id="side9">
+  <br>
+  <label for="radius">Радіус:</label>
+  <input type="number" id="radius">
+  <br><br>
+  <button onclick="calculateAreaBySidesAndRadius()">Розрахувати площу</button>
+  <p id="result4"></p>
+</div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
